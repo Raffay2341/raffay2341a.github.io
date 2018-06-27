@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <tr>
+            <td><span style="font-weight: bold">Stock</span></td>
+            <td><span style="font-weight: bold">Shares</span></td>
+            <td><span style="font-weight: bold">Transaction Type</span></td>
+            <td><span style="font-weight: bold">Price at Transaction</span></td>
+            <td><span style="font-weight: bold">Timestamp</span></td>
+        </tr>
+
+        {% for r in htmlrows %}
+            <tr>
+                <td>{{ r.stock }} </td>
+                <td>{{ r.shares }} </td>
+                <td>{{ r.transaction }} </td>
+                <td>{{ r.price }} </td>
+                <td>{{ r.time }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

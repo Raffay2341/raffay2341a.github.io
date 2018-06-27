@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <tr>
+            <td><span style="font-weight: bold">Stock</span></td>
+            <td><span style="font-weight: bold">Shares</span></td>
+            <td><span style="font-weight: bold">Current Price</span></td>
+            <td><span style="font-weight: bold">Grand Value</span></td>
+        </tr>
+
+        {% for s in htmlstocks %}
+            <tr>
+                <td>{{ s.stock }} </td>
+                <td>{{ s.totalshares }} </td>
+                <td>{{ s.currentprice }} </td>
+                <td>{{ s.grandvalue }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br/>
+
+    <h4>Current Cash Balance: {{ cash }}</h4>
+    <h4>Grand Total: {{ gtotal }}</h4>
+{% endblock %}
